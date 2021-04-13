@@ -12,13 +12,11 @@ public @Data
 class CompanyImageModel implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    private Integer companyId;
     private byte[] companyImage;
 
     @ManyToOne
-    @MapsId
     @JoinColumn(name = "company_id")
     private CompanyModel company;
 }
