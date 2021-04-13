@@ -1,4 +1,5 @@
 package com.jobfull.jobFull.companyProfile.service;
 
-public class CompanyServiceImpl  implements  CompanyService{
+public class CompanyServiceImpl  implements  CompanyService {
+
 }
