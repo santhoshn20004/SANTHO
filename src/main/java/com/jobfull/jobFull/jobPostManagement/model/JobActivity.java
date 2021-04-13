@@ -1,27 +1,30 @@
 package com.jobfull.jobFull.jobPostManagement.model;
 
+import com.jobfull.jobFull.userManagement.model.UserModel;
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Entity
 public @Data
 class JobActivity implements Serializable {
 
-    //    private JobHunterModel jobHunter;
+    @EmbeddedId
+    private JobActivityId jobActivityId;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
-
+    @JoinColumn(name="job_id")
     @ManyToOne
-    @MapsId
-    @JoinColumn(name = "job_id")
-    private JobPostModel job;
+    public JobPostModel job;
+
+    @JoinColumn(name="user_id")
+    @ManyToOne
+    public UserModel user;
 
     private LocalDate applicationDate;
-
 }
+

@@ -1,12 +1,12 @@
 package com.jobfull.jobFull.jobPostManagement.model;
 
+import com.jobfull.jobFull.userManagement.model.UserModel;
 import lombok.Data;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -19,8 +19,9 @@ class JobPostModel implements Serializable {
     @Type(type = "pg-uuid")
     private UUID id;
 
-    //    fk
-//    private UserModel postedByUser;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserModel postedByUser;
 
     @ManyToOne
     @JoinColumn(name = "job_type_id")
@@ -39,9 +40,5 @@ class JobPostModel implements Serializable {
     private JobLocation jobLocation;
 
     private boolean isActive;
-
-    @OneToMany(mappedBy = "job")
-    @PrimaryKeyJoinColumn
-    private List<JobActivity> jobActivity;
 
 }
