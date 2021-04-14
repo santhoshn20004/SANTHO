@@ -1,11 +1,11 @@
 package com.jobfull.jobFull.companyProfile.model;
 
-import com.jobfull.jobFull.companyProfile.model.CompanyImageModel;
+import com.jobfull.jobFull.jobPostManagement.model.JobPostModel;
 import lombok.Data;
 import org.hibernate.annotations.Type;
 
-import java.io.Serializable;
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
@@ -31,4 +31,7 @@ class CompanyModel implements Serializable{
     private LocalDate registrationDate;
 
     private String website;
+
+    @OneToMany(mappedBy = "company")
+    private List<JobPostModel> jobs;
 }

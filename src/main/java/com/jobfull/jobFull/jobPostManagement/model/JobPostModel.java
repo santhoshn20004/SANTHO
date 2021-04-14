@@ -1,5 +1,6 @@
 package com.jobfull.jobFull.jobPostManagement.model;
 
+import com.jobfull.jobFull.companyProfile.model.CompanyModel;
 import com.jobfull.jobFull.userManagement.model.UserModel;
 import lombok.Data;
 import org.hibernate.annotations.Type;
@@ -27,8 +28,9 @@ class JobPostModel implements Serializable {
     @JoinColumn(name = "job_type_id")
     private JobType jobType;
 
-    //    fk
-//    private CompanyModel company;
+    @ManyToOne
+    @JoinColumn(name = "company")
+    private CompanyModel company;
 
     private LocalDate createdDate;
 
