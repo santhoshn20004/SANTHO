@@ -1,4 +1,11 @@
 package com.jobfull.jobFull.jobHunterProfile.repository;
 
-public interface JobHunterRepository {
+import com.jobfull.jobFull.jobHunterProfile.model.JobHunterModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.UUID;
+
+@Repository
+public interface JobHunterRepository extends JpaRepository<JobHunterModel, UUID> {
 }

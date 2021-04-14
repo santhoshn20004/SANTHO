@@ -1,16 +1,15 @@
 package com.jobfull.jobFull.userManagement.model;
 
-import io.swagger.models.auth.In;
+//@Entity
+//@Table(name = "user_type")
+public enum UserTypeModel {
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "user_type")
-public class UserTypeModel {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    private String userTypeName;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private Integer id;
+//    private String userTypeName;
+    USER,
+    ADMIN,
+    COMPANY
 
 }

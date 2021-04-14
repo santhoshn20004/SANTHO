@@ -1,6 +1,6 @@
 package com.jobfull.jobFull.userManagement.model;
 
-import lombok.Data;
+import lombok.*;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
@@ -10,13 +10,19 @@ import java.util.UUID;
 @Entity
 @Table(name = "users")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder
 public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Type(type = "pg-uuid")
     private UUID id;
 
-//    private UserTypeModel userTypeId;
+    @Enumerated(EnumType.STRING)
+    private UserTypeModel role;
     private String email;
     private String password;
     private LocalDate dateOfBirth;
@@ -24,5 +30,10 @@ public class UserModel {
     private byte[] userImage;
     private LocalDate registrationDate;
     private String city;
+    private Boolean enabled = false;
+
+    public boolean isEnabled() {
+        return enabled;
+    }
 
 }
