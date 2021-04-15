@@ -2,7 +2,8 @@ package com.jobfull.jobFull.userManagement.login;
 
 import com.jobfull.jobFull.security.JwtTokenServices;
 import com.jobfull.jobFull.userManagement.model.UserModel;
-import com.jobfull.jobFull.userManagement.service.UserService;
+import com.jobfull.jobFull.userManagement.service.UserServiceImpl;
+//import com.jobfull.jobFull.userManagement.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -34,9 +35,9 @@ public class LoginController {
     private final JwtTokenServices jwtTokenServices;
 
     @Autowired
-    private final UserService userService;
+    private final UserServiceImpl userService;
 
-    public LoginController(AuthenticationManager authenticationManager, JwtTokenServices jwtTokenServices, UserService userService) {
+    public LoginController(AuthenticationManager authenticationManager, JwtTokenServices jwtTokenServices, UserServiceImpl userService) {
         this.authenticationManager = authenticationManager;
         this.jwtTokenServices = jwtTokenServices;
         this.userService = userService;
