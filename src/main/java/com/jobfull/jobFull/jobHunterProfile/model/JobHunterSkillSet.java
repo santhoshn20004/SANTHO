@@ -1,6 +1,5 @@
 package com.jobfull.jobFull.jobHunterProfile.model;
 
-import com.jobfull.jobFull.jobPostManagement.model.JobActivity;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,7 +18,7 @@ public class JobHunterSkillSet implements Serializable {
     @ManyToOne
     private JobHunterModel jobHunter;
 
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "skillset_id", nullable = false)
     @ManyToOne
     private SkillSet skillSet;
 
@@ -32,9 +31,9 @@ public class JobHunterSkillSet implements Serializable {
  * or we delete this part of the connection.
  *
  * */
-    @OneToMany(mappedBy = "jobHunter")
-    private JobActivity jobActivity;
-
+//    @OneToMany(mappedBy = "jobHunter")
+//    private JobActivity jobActivity;
+//
 
 
 
