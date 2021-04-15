@@ -1,6 +1,6 @@
 package com.jobfull.jobFull.jobHunterProfile.model;
 
-import com.jobfull.jobFull.userManagement.model.UserModel;
+import com.jobfull.jobFull.jobPostManagement.model.JobActivity;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -12,12 +12,30 @@ import java.io.Serializable;
 public class JobHunterSkillSet implements Serializable {
 
     @Id
-    @JoinColumn(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @JoinColumn(name = "user_id", nullable = false)
     @ManyToOne
-    private UserModel userModel;
+    private JobHunterModel jobHunter;
 
+    @JoinColumn(name = "id", nullable = false)
+    @ManyToOne
+    private SkillSet skillSet;
 
+//    what would be the scale? are we implementing an enum or?
     private Integer skillLevel;
+
+/*
+ * to check the diagrams connections between jobActivity and JobHunterSkillSet vs UserModel.
+ * We need to implement the other part of the connection in JobActivity
+ * or we delete this part of the connection.
+ *
+ * */
+    @OneToMany(mappedBy = "jobHunter")
+    private JobActivity jobActivity;
+
+
 
 
 
