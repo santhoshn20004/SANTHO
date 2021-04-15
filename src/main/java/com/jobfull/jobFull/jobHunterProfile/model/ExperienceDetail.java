@@ -13,12 +13,12 @@ import java.util.UUID;
 public class ExperienceDetail implements Serializable {
 
     @Id
-    @Column(name = "user_id")
-    private UUID userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    @JoinColumn(name = "user_id", nullable = false)
     @ManyToOne
-    @PrimaryKeyJoinColumn(name = "user_id", referencedColumnName = "user_id")
-    private JobHunterModel jobHunterModel;
+    private JobHunterModel jobHunter;
 
     private boolean isCurrentJob;
     private Date startDate;
