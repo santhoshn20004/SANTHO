@@ -20,10 +20,11 @@ public class JobHunterModel implements Serializable {
     private UUID id;
 
     @ManyToOne
-    @PrimaryKeyJoinColumn(name = "user_id", referencedColumnName = "id")
+    @PrimaryKeyJoinColumn(name = "user_model_id", referencedColumnName = "id")
     private UserModel userModel;
 
     private String firstName;
+
     private String lastName;
 
     @OneToMany(mappedBy = "jobHunter")

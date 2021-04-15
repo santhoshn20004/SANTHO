@@ -1,5 +1,6 @@
 package com.jobfull.jobFull.jobHunterProfile.model;
 
+import com.jobfull.jobFull.jobPostManagement.model.JobSkillSet;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -21,7 +22,8 @@ public class SkillSet implements Serializable {
     @OneToMany(mappedBy = "skillSet")
     private List<JobHunterSkillSet> jobHunterSkillSet;
 
-
+    @OneToMany(mappedBy = "skillSet")
+    private List<JobSkillSet> jobSkillSet;
 
 
 }
