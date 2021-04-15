@@ -17,6 +17,9 @@ public class SkillSet implements Serializable {
     @Column(name = "skill_set_name")
     private String name;
 
+    @OneToMany(mappedBy = "skillSet")
+    private JobHunterSkillSet jobHunterSkillSet;
+
 
 
 
