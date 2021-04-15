@@ -12,17 +12,21 @@ import java.util.UUID;
 @Data
 public class JobHunterModel implements Serializable {
 
-    @Id
-    @Column(name = "user_id")
-    private UUID userId;
-
     @ManyToOne
     @PrimaryKeyJoinColumn(name = "user_id", referencedColumnName = "id")
     private UserModel userModel;
 
-
     private String firstName;
-
     private String lastName;
+
+    @OneToMany(mappedBy = "jobHunter")
+    private EducationDetail educationDetail;
+
+    @OneToMany(mappedBy = "jobHunter")
+    private ExperienceDetail experienceDetail;
+
+    @OneToMany(mappedBy = "jobHunter")
+    private JobHunterSkillSet jobHunterSkillSet;
+
 
 }
