@@ -35,7 +35,10 @@ public class RegistrationController {
                 .email(email)
                 .role(request.getRole())
                 .password(password)
+                .city(request.getCity())
+                .dateOfBirth(request.getDateOfBirth())
                 .registrationDate(LocalDate.now())
+                .contactNumber(request.getContactNumber())
                 .build();
 
         if((userService.findByEmail(email).isPresent())){

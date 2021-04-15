@@ -1,7 +1,8 @@
 package com.jobfull.jobFull.userManagement.controller;
 
 import com.jobfull.jobFull.userManagement.model.UserModel;
-import com.jobfull.jobFull.userManagement.service.UserService;
+
+import com.jobfull.jobFull.userManagement.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -18,10 +19,10 @@ import java.util.List;
 @RequestMapping(path = "/api/v1/user")
 @CrossOrigin
 public class UserController {
-    private final UserService userService;
+    private final UserServiceImpl userService;
 
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserServiceImpl userService) {
         this.userService = userService;
     }
 
