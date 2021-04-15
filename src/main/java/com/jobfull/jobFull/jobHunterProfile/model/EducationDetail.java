@@ -12,10 +12,14 @@ import java.util.Date;
 @Data
 public class EducationDetail implements Serializable {
 
+
     @Id
-    @JoinColumn(name = "user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @JoinColumn(name = "user_id", nullable = false)
     @ManyToOne
-    private UserModel userModel;
+    private JobHunterModel jobHunter;
 
     private String certificateDegreeName;
     private String major;
