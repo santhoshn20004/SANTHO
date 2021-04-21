@@ -33,6 +33,9 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/v1/registration/signup").permitAll()
                 .antMatchers("/api/v1/jobhunter").permitAll()
                 .antMatchers("/api/v1/companies").permitAll()
+                .antMatchers("/swagger*/**").permitAll()
+                .antMatchers("/v*/api-docs").permitAll()
+//                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/v1/user/**").hasAuthority("USER")
 //                .antMatchers(HttpMethod.POST, "/api/todo/list/").hasRole("USER")// allowed only when signed in
 //                .antMatchers(HttpMethod.DELETE, "/api/todo/list/**").hasRole("ADMIN") // allowed if signed in with ADMIN role
