@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table
@@ -16,6 +17,9 @@ public class SkillSet implements Serializable {
 
     @Column(name = "skill_set_name")
     private String name;
+
+    @OneToMany(mappedBy = "skillSet")
+    private List<JobHunterSkillSet> jobHunterSkillSet;
 
 
 

@@ -1,10 +1,13 @@
 package com.jobfull.jobFull.userManagement.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -13,7 +16,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserModel {
+public class UserModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Type(type = "pg-uuid")
@@ -23,6 +26,11 @@ public class UserModel {
     private UserTypeModel role;
     private String email;
     private String password;
+
+
+
+    @JsonFormat(pattern="yyyy-MM-dd",
+    shape = JsonFormat.Shape.STRING)
     private LocalDate dateOfBirth;
     private String contactNumber;
     private byte[] userImage;

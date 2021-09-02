@@ -2,7 +2,8 @@ package com.jobfull.jobFull.userManagement.login;
 
 import com.jobfull.jobFull.security.JwtTokenServices;
 import com.jobfull.jobFull.userManagement.model.UserModel;
-import com.jobfull.jobFull.userManagement.service.UserService;
+import com.jobfull.jobFull.userManagement.service.UserServiceImpl;
+//import com.jobfull.jobFull.userManagement.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -12,10 +13,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -24,6 +22,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/v1")
+@CrossOrigin(origins = "http://localhost:3000")
 public class LoginController {
 
     @Autowired
@@ -34,9 +33,9 @@ public class LoginController {
     private final JwtTokenServices jwtTokenServices;
 
     @Autowired
-    private final UserService userService;
+    private final UserServiceImpl userService;
 
-    public LoginController(AuthenticationManager authenticationManager, JwtTokenServices jwtTokenServices, UserService userService) {
+    public LoginController(AuthenticationManager authenticationManager, JwtTokenServices jwtTokenServices, UserServiceImpl userService) {
         this.authenticationManager = authenticationManager;
         this.jwtTokenServices = jwtTokenServices;
         this.userService = userService;
