@@ -35,7 +35,4 @@ public class JobHunterSkillSet implements Serializable {
 //    private JobActivity jobActivity;
 //
 
-
-
-
 }
