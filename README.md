@@ -1,91 +1,84 @@
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <a href="https://github.com/Spafi/jobfull/">
 
-[comment]: <> (    <img src="images/logo.png" alt="Logo" width="80" height="80">)
-  </a>
+## JobFull 
 
-<h3 align="center">Jobfull API</h3>
-
-  <p align="center">
-    Jobfull is an online job portal where you can make an account and search for a job or post a job announcement.
-    This is the REST API Server written in Java + Spring Boot & PostgreSQL.
-</p>
+> Jobfull is a website where the users can create an account and sign in as a company or a canditate to either add a new job and find new applicants for his company or find jobs and apply to a variety of jobs posted by the companies. The project is developed with Spring Boot (Controller, Repository, Service, Model) and secured with Spring Security using a JWT Token for accessing authentification requests.The frontend is developed with React. 
 
 
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
+![jobfull](https://github.com/smyrmnsr/JobFull/blob/applicants-page/jobfull.gif)
 
-  </ol>
-</details>
+## Steps to Setup the Spring Boot Back end app (jobfull-backend)
 
+1. **Clone the application**
 
+   ```bash
+   git clone https://github.com/smyrmnsr/jobfull-backend
+   cd jobfull-backend
+   ```
+   
+2. **Database is stored on Heroku. If you want to create your own with PostgreSQL:**
 
-<!-- ABOUT THE PROJECT -->
+   ```bash
+   create database jobfull
+   ```
+   
+3. **Change PostgreSQL username and password as per your PostgreSQL installation**
 
-## About The Project
-This project was chosen as a team project, during the Codecool advanced module, after interacting on smaller projects with the Spring Framework.
-Here is the repo for the REST API Server.
+   - open `src/main/resources/application.properties` file.
 
-### Built With
+   - change `spring.datasource.username` and `spring.datasource.password` properties as per your postgresql installation
 
-####  <img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo.png" alt="Java" height="40"/> Java +  <img src="https://img.icons8.com/color/48/000000/spring-logo.png" alt="Spring" height="30"/> Spring Framework + <img src="https://img.icons8.com/color/48/000000/postgreesql.png" alt="PostgreSQL" height="30" />  PostrgreSQL
+4. **Run the app**
 
-<!-- GETTING STARTED -->
+   You can run backend app in your IDE (all the dependencies are in the pom.xml) 
 
-## Getting Started
+   The server will start on port 5000.
+   
+   
+## Steps to Setup the React Front end app (jobfull)
 
-To get a local copy up and running follow these simple steps.
+1. **Clone the application**
 
-### Prerequisites
+   ```bash
+   git clone https://github.com/smyrmnsr/jobfull
+   cd jobfull
+   ```
 
-* Java 11
-  
-  https://www.java.com/en/download/
-
-
-* PostgreSQL
-
-  https://www.postgresql.org/download/
+2. **Then type the following command to install the dependencies and start the application** - 
+   
+   ```bash
+    npm install && npm start
+   ```
+   
+   The front-end server will start on port `3000`.
 
 
-### Installation
+## Technologies Used
 
-1. Create the PostgreSQL database
-2. Replace the connection properties with your database credentials in ```src/main/resources/application.properties```
+FRONTEND
+
+![REACT](https://img.shields.io/badge/REACT-black?style=flat&logo=react&logoColor=cyan)
+![JAVASCRIPT](https://img.shields.io/badge/-JAVASCRIPT-black?style=flat&logo=javascript)
+![CSS3](https://img.shields.io/badge/-CSS3-black?style=flat&logo=css3)
+![HTML5](https://img.shields.io/badge/-HTML5-black?style=flat&logo=html5&logoColor=red)
+![TAILWINDCSS](https://img.shields.io/badge/TAILWIND_CSS-black?style=flat&logo=tailwind-css&logoColor=cyan)
+
+BACKEND
+
+![NODE.JS](https://img.shields.io/badge/NODE.JS-black?style=flat&logo=node-dot-js&logoColor=green)
+![POSTGRESQL](https://img.shields.io/badge/POSTGRESQL-black?style=flat&logo=postgresql&logoColor=blue)
+![JAVA](https://img.shields.io/badge/JAVA-black?style=flat&logo=java&logoColor=orange)
+![HIBERNATE](https://img.shields.io/badge/HIBERNATE-black?style=flat&logo=Symfony&logoColor=brown)
+![SPRING](https://img.shields.io/badge/SPRING-black?style=flat&logo=Symfony&logoColor=green)
+
+The project focused on creating client side and server side. This project also used express for building the server API and postresql database to store the collections and documents containing the data from the users.
+The backend part consist in Spring Boot, Spring Security with JWT Token and Hibernate.
+The frontend was made with React and stylized with Tailwind CSS framework.
+## Author
+
+👤 **Samir Mansour**
+
+- Github: [@smyrmnsr](https://github.com/smyrmnsr)
 
 
-<!-- CONTACT -->
 
-## Contact
-
-[![Twitter: Spafi](https://img.shields.io/twitter/follow/CristianSpafiu?style=social)](https://twitter.com/CristianSpafiu)
-[![Linkedin: Spaf](https://img.shields.io/badge/-spaf-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/spaf/)](https://www.linkedin.com/in/spaf/)
-[![GitHub Spafi](https://img.shields.io/github/followers/spafi?label=follow&style=social)](https://github.com/Spafi)
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-
-[linkedin-url]: https://linkedin.com/in/Spafi
