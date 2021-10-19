@@ -6,6 +6,7 @@
 ![jobfull](https://github.com/smyrmnsr/jobfull-backend/blob/master/jobfull.png)
 ![jobfull](https://github.com/smyrmnsr/jobfull-backend/blob/master/jobfull-desktop-3.png)
 ![jobfull](https://github.com/smyrmnsr/jobfull-backend/blob/master/jobfull-desktop-2.png)
+<img src="https://github.com/smyrmnsr/JobFull/blob/applicants-page/jobfull.gif" width="100" height="100">
 ![jobfull](https://github.com/smyrmnsr/JobFull/blob/applicants-page/jobfull.gif)
 
 ## Steps to Setup the Spring Boot Back end app (jobfull-backend)
