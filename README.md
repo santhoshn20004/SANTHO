@@ -3,8 +3,9 @@
 
 > Jobfull is a website where the users can create an account and sign in as a company or a canditate to either add a new job and find new applicants for his company or find jobs and apply to a variety of jobs posted by the companies. The project is developed with Spring Boot (Controller, Repository, Service, Model) and secured with Spring Security using a JWT Token for accessing authentification requests.The frontend is developed with React. 
 
-
-
+![jobfull](https://github.com/smyrmnsr/jobfull-backend/blob/master/jobfull.png)
+![jobfull](https://github.com/smyrmnsr/jobfull-backend/blob/master/jobfull-desktop-3.png)
+![jobfull](https://github.com/smyrmnsr/jobfull-backend/blob/master/jobfull-desktop-2.png)
 ![jobfull](https://github.com/smyrmnsr/JobFull/blob/applicants-page/jobfull.gif)
 
 ## Steps to Setup the Spring Boot Back end app (jobfull-backend)
